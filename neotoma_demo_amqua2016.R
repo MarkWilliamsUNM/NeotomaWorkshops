@@ -121,6 +121,8 @@ setwd('C:/Jack/Datasets/AA_Software/Bacon/winBacon_2.2/Cores/Marion')
 #get the geochronological data for both Marion Lake and Marion Landfill
 get_geochron(marion.meta.site, verbose = TRUE)
 
+#RAN OUT OF TIME HERE - BELOW CODE NOT DONE YET
+
 #Create dataframe to hold geochronology data for export
 geochron.df <- data.frame(alnus = marion.lake.pct[,"Alnus "],
                        ages  = marion.lake.data[[1]]$sample.meta$age,
