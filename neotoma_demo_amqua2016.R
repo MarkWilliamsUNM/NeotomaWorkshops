@@ -63,9 +63,7 @@ marion.meta.dataset
 #Get all datasets for both Marion Site and Marion Landfill. get_download will accept
 #an object of class dataset
 marion.all.data <- get_download(marion.meta.site)
-#Get all datasets for just Marion Lake [this line needs debugging]
-#marion.lake.data <- get_download("Marion Lake%")
-#Get all datasets for just Marion Lake, alternate solution:[this line needs debugging]
+#Get all datasets for just Marion Lake:[this line needs debugging]
 #marion.lake.data <- get_download(marion.meta.site$site.id[[1]])
 
 #Within the download object, sample.meta stores the core depth and age information for that dataset
@@ -116,9 +114,12 @@ setwd('C:/Jack/Datasets/AA_Software/Bacon/winBacon_2.2')
 source('Bacon.R')
 
 #Bacon uses text files as inputs.  We'll create these.
-#Export Marion geochronology dataset to text
+#Set working directory to where Bacon will look for input files
 dir.create('C:/Jack/Datasets/AA_Software/Bacon/winBacon_2.2/Cores/Marion')
 setwd('C:/Jack/Datasets/AA_Software/Bacon/winBacon_2.2/Cores/Marion')
+
+#get the geochronological data for both Marion Lake and Marion Landfill
+get_geochron(marion.meta.site, verbose = TRUE)
 
 #Create dataframe to hold geochronology data for export
 geochron.df <- data.frame(alnus = marion.lake.pct[,"Alnus "],
