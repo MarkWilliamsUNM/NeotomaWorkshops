@@ -6,9 +6,15 @@ output: html_document
 ---
 
 # Neotoma Workshop, AmQua July 2016
-## Useful Websites
+## Learning Goals
+1. *Neotoma Explorer* Learn how to use  Explorer and a teaching exercise designed to introduce it.
+2. *APIs and JSON* Introduce the concept of APIs and the APIs developed to enable programmatic access to Neotoma data.
+3. *R and _neotoma_ * 
+4. *GitHub and RMarkdown * 
+
+## Useful Websites and Resources
 ### Neotoma Resources
-* This Exercise: <https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/Neotoma_Workshop_AmQua2016.Rmd>
+* This exercise: <https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/Neotoma_Workshop_AmQua2016.Rmd>
 * SERC Carleton: <http://serc.carleton.edu/neotoma/activities.html>
 * Neotoma APIs: <http://api.neotomadb.org/>
 * Neotoma Manual and Database Structure: <http://neotoma-manual.readthedocs.io/en/latest/>
@@ -20,7 +26,7 @@ output: html_document
 * Using GitHub with R and RStudio: <http://www.molecularecologist.com/2013/11/using-github-with-r-and-rstudio/>
 * RStudio Support:  <https://support.rstudio.com/hc/en-us/articles/200532077?version=0.99.489&mode=desktop>
 
-## Workshop Activities and Background
+## Workshop Activities
 ### Part 1: Neotoma Explorer 
 1. Walkthrough of Neotoma Explorer.  This and other Neotoma-related exercises are available at (SERC Carleton)[http://serc.carleton.edu/neotoma/activities.html].
 2. save JSON and drag back to Explorer
