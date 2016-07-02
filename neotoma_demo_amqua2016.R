@@ -6,11 +6,12 @@
 #
 
 ++++++++++++++
-#Install neotoma package from GitHub repository
-install.packages("devtools")
-library(devtools)
+#Install neotoma package from GitHub repository (this just needs to be done once)
 install.packages("neotoma")
+#Add the neotoma package to your programming environment
 library(neotoma)
+
+#
 
 #Get Site Information
 #get_site returns a data frame with information about 

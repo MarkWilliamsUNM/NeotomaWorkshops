@@ -7,14 +7,15 @@ output: html_document
 
 # Neotoma Workshop, AmQua July 2016
 ## Learning Goals
-1. *Neotoma Explorer* Learn how to use  Explorer and a teaching exercise designed to introduce it.
-2. *APIs and JSON* Introduce the concept of APIs and the APIs developed to enable programmatic access to Neotoma data.
-3. *R and _neotoma_ * 
-4. *GitHub and RMarkdown * 
+1. **Neotoma Explorer**: Learn how to use  Explorer and a teaching exercise designed to introduce it.
+2. **APIs and JSON**: Introduce the concept of APIs and the APIs developed to enable programmatic access to Neotoma data.
+3. **R and _neotoma_**: 
+4. **GitHub and RMarkdown**: 
 
 ## Useful Websites and Resources
 ### Neotoma Resources
-* This exercise: <https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/Neotoma_Workshop_AmQua2016.Rmd>
+* This overview: <https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/Neotoma_Workshop_AmQua2016.Rmd>
+* Accompanying R Script <https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/neotoma_demo_amqua2016.R>
 * SERC Carleton: <http://serc.carleton.edu/neotoma/activities.html>
 * Neotoma APIs: <http://api.neotomadb.org/>
 * Neotoma Manual and Database Structure: <http://neotoma-manual.readthedocs.io/en/latest/>
@@ -28,25 +29,25 @@ output: html_document
 
 ## Workshop Activities
 ### Part 1: Neotoma Explorer 
-1. Walkthrough of Neotoma Explorer.  This and other Neotoma-related exercises are available at (SERC Carleton)[http://serc.carleton.edu/neotoma/activities.html].
+1. Walkthrough of Neotoma Explorer.  This and other Neotoma-related exercises are available at [SERC Carleton](http://serc.carleton.edu/neotoma/activities.html).
 2. save JSON and drag back to Explorer
 
 ### Part 2:  APIs & JSON
 #### Intro to APIs
 Neotoma makes its data available through a set of programming tools known as APIs (Application Programming Interfaces). An API allows different applications to talk to one another. In most cases you will see an API being used in a web environment, where commands are passed through the URL using particular, fixed, variables.
 
-Usually, if you want to analyze many sites or pass Neotoma data to other analytical environments, such as R, Matlab, or Python, you will want to use the APIs.  
+Usually, if you want to analyze many datasets simultaneously, or pass Neotoma data to other analytical environments (e.g. R, Matlab, Python), you will want to use the APIs.  
 
-Here, we'll introduce the concept of APIs and show how the Neotoma APIs work. In the next section, we will explore the _neotoma_ R package.  This package sits on top of the Neotoma APIs and uses them to get data and metadata from the Neotoma database and pull them into Neotoma.
+Here, we'll introduce the concept of APIs and show how the Neotoma APIs work. In the next section, we will explore the _neotoma_ R package.  _neotoma_ sits on top of the Neotoma APIs and uses them to get data and metadata from the Neotoma database and pull them into Neotoma.
 
 Let's begin with an example of an API that we use all the time:  Google. Take a second right now to go to Google and type in a search term, then hit enter. You should see something like this:
 
 > https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=when%20did%20the%20quaternary%20begin
 
-This is the API that interfaces between your web browser and Google's databases.  You can see I searched for the string “when did the quatnerary begin”, it is prefaced by “q=”. Google's servers know that when they are reading the URL everything followed by the hash sign (#) is part of a set of variables.
+This is the API that interfaces between your web browser and Google's databases.  You can see I searched for the string “when did the quaternary begin”. This string is part of a command sent to the Google servers, and is prefaced by “q=”. Google's servers know that when they are reading the URL everything followed by the hash sign (#) is part of a set of variables.
 
 #### Neotoma APIs
-[Neotoma](http://www.neotomadb.org) has the same kind of API, although it is specialized to serve up the paleoecological records stored in the database. The APIs are documented and described on the Neotoma developer [website](http://api.neotomadb.org/)
+[Neotoma](http://www.neotomadb.org) has the same kind of API, although it is specialized to serve up the paleoecological records stored in the database. The APIs are documented and described on the [Neotoma Developer Center](http://api.neotomadb.org/)
 
 The Neotoma API is just a way for applications on your computer (such as R) to interact with the Neotoma database. It allows you to search for sites, publications, authors and data sets using the Neotoma URL. For example the sites command:
 
@@ -58,13 +59,13 @@ This is a good moment to introduce JSON.  JSON stands for JavaScript Object Nota
 
 Several extensions exist for browsers to make JSON data easier to read.  I use **JSONView**
 
-Various APIs have been developed to return datasets, publications and other database tables from within Neotoma. In addition, a set of APIs exist that each directly map onto a table in the Neotoma Database.  All APIs are documented on the (Neotoma Developer Center)[http://api.neotomadb.org/doc/home]
+Various APIs have been developed to return datasets, publications and other database tables from within Neotoma. In addition, a set of APIs exist that each directly map onto a table in the Neotoma Database.  All APIs are documented on the (Neotoma Developer Center)[http://api.neotomadb.org/doc/home].
 
 ##### Walkthrough of APIs
-1.	Site, Dataset, etc. (walk through each with examples)
+1.	Site, Dataset, etc. (walk through each with examples, using material on the [Neotoma Developer Center](http://api.neotomadb.org/))
 2.	Base Tables 
 
-
+### Part 3:  R and _neotoma_
 
 
 Scrap text from standard RMarkdown template
