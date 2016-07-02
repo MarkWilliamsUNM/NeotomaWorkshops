@@ -13,7 +13,7 @@ output: html_document
 4. **GitHub and RMarkdown**: 
 
 ## Useful Websites and Resources
-### Neotoma Resources
+### Neotoma & Related PaleoResources
 * This overview: <https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/Neotoma_Workshop_AmQua2016.Rmd>
 * Accompanying R Script <https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/neotoma_demo_amqua2016.R>
 * SERC Carleton: <http://serc.carleton.edu/neotoma/activities.html>
@@ -21,6 +21,7 @@ output: html_document
 * Neotoma Manual and Database Structure: <http://neotoma-manual.readthedocs.io/en/latest/>
 * Neotoma Entity Relationship Diagram: <http://www.neotomadb.org/uploads/NeotomaDMD.pdf>
 * Goring et al. 2015 neotoma package: <http://www.openquaternary.com/articles/10.5334/oq.ab/>
+* bacon and clam age-modeling software (Maarten Blaauw) <http://chrono.qub.ac.uk/blaauw/>
 
 ### Guides: RMarkdown & GitHub
 * RMarkdown Reference Guide: <https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf>
@@ -66,7 +67,7 @@ Various APIs have been developed to return datasets, publications and other data
 2.	Base Tables 
 
 ### Part 3:  R and _neotoma_
-
+For this section, we will use a demo R script available on [GitHub](https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/neotoma_demo_amqua2016.R)
 
 Scrap text from standard RMarkdown template
 ```{r}
