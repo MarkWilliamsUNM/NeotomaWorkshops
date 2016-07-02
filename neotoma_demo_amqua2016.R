@@ -64,24 +64,25 @@ marion.meta.dataset
 #an object of class dataset
 marion.all.data <- get_download(marion.meta.site)
 #Get all datasets for just Marion Lake [this line needs debugging]
-marion.lake.data <- get_download("Marion Lake%")
+#marion.lake.data <- get_download("Marion Lake%")
 #Get all datasets for just Marion Lake, alternate solution:[this line needs debugging]
-marion.lake.data <- get_download(marion.meta.site$site.id[[1]])
+#marion.lake.data <- get_download(marion.meta.site$site.id[[1]])
 
 #Within the download object, sample.meta stores the core depth and age information for that dataset
 #We just want to look at the first few lines, so are  using the head function
-head(marion.lake.data[[1]]$sample.meta)
+#We're just looking at the first object (Marion Lake, not Marion Landfill)
+head(marion.all.data[[1]]$sample.meta)
 
 #taxon.list stores a list of taxa found  in the  dataset
-head(marion.lake.data[[1]]$taxon.list)
+head(marion.all.data[[1]]$taxon.list)
 
 #counts stores the the counts, presence/absence data, or percentage data for each taxon for each sample
-head(marion.lake.data[[1]]$counts)
+head(marion.all.data[[1]]$counts)
 
 #lab.data stores any associated  laboratory measurements in the dataset
 #For Marion Lake, this returns the Microsphere suspension used as a spike to calculate
 #concentrations
-head(marion.lake.data[[1]]$lab.data)
+head(marion.all.data[[1]]$lab.data)
 
 #compile_taxa [fix code]
 #The level of taxonomic resolution can vary among analysts.  Often for multi-site
@@ -95,16 +96,34 @@ head(marion.lake.data[[1]]$lab.data)
 library("analogue")
 
 #Convert Marion Lake pollen data to percentages
-marion.lake.pct <- tran(x = marion.lake.data[[1]]$counts, method = 'percent')
+marion.lake.pct <- tran(x = marion.all.data[[1]]$counts, method = 'percent')
 
 #Build a quick plot of Alnus
 #Build a new dataframe containing the pollen percentages and sample ages
-alnus.df <- data.frame(alnus = marion.lake.pct[,"Alnus incana-type"],
-                       ages  = marion.lake.data[[1]]$sample.meta$age,
-                       site = rep('Marion', length(marion.lake.data)))
+alnus.df <- data.frame(alnus = marion.lake.pct[,"Alnus"],
+                       ages  = marion.all.data[[1]]$sample.meta$age,
+                       site = rep('Marion', length(marion.all.data[[1]]$sample.meta$age)))
 
 #Plot the  data
 plot(alnus ~ ages, data = alnus.df, col = alnus.df$site, pch = 19,
-     xlab = 'Radiocarbon Years Before Present', ylab = 'Percent Alnus incana-type')
+     xlab = 'Radiocarbon Years Before Present', ylab = 'Percent Alnus')
 
- 
+#Part III
+#Build a new age model for Marion Lake, using bacon
+
+#Set working directory to location of bacon software
+setwd('C:/Jack/Datasets/AA_Software/Bacon/winBacon_2.2')
+source('Bacon.R')
+
+#Bacon uses text files as inputs.  We'll create these.
+#Export Marion geochronology dataset to text
+dir.create('C:/Jack/Datasets/AA_Software/Bacon/winBacon_2.2/Cores/Marion')
+setwd('C:/Jack/Datasets/AA_Software/Bacon/winBacon_2.2/Cores/Marion')
+
+#Create dataframe to hold geochronology data for export
+geochron.df <- data.frame(alnus = marion.lake.pct[,"Alnus "],
+                       ages  = marion.lake.data[[1]]$sample.meta$age,
+                       site = rep('Marion', length(marion.lake.data)))
+write(x, file = "marion.csv",
+      ncolumns = if(is.character(x)) 1 else 5,
+      append = FALSE, sep = " ")

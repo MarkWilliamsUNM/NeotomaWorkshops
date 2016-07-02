@@ -10,6 +10,10 @@ output: html_document
 1. **Neotoma Explorer**: Learn how to use  Explorer and a teaching exercise designed to introduce it.
 2. **APIs and JSON**: Introduce the concept of APIs and the APIs developed to enable programmatic access to Neotoma data.
 3. **R and _neotoma_**: 
++ get sites
++ get datasets
++ get downloads
++ bacon
 4. **GitHub and RMarkdown**: 
 
 ## Useful Websites and Resources
@@ -67,17 +71,12 @@ Various APIs have been developed to return datasets, publications and other data
 2.	Base Tables 
 
 ### Part 3:  R and _neotoma_
+This section demonstrates how to use the _neotoma_ R package to get data from Neotoma and pass it into R.  
 For this section, we will use a demo R script available on [GitHub](https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/neotoma_demo_amqua2016.R)
 
-Scrap text from standard RMarkdown template
-```{r}
-summary(cars)
-```
 
-You can also embed plots, for example:
+### Part 4:  bacon age modeling
+This section demonstrates how to generate new age models in R using the bacon software.
+For this section, we will use another demo R script available on [GitHub](https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/bacon_demo_amqua2016.R)
 
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+### Part 5:  GitHub and RMarkDown
