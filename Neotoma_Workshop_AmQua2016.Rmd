@@ -8,6 +8,7 @@ output: html_document
 # Neotoma Workshop, AmQua July 2016
 ## Useful Websites
 ### Neotoma Resources
+* This Exercise: <https://github.com/IceAgeEcologist/NeotomaWorkshops/blob/master/Neotoma_Workshop_AmQua2016.Rmd>
 * SERC Carleton: <http://serc.carleton.edu/neotoma/activities.html>
 * Neotoma APIs: <http://api.neotomadb.org/>
 * Neotoma Manual and Database Structure: <http://neotoma-manual.readthedocs.io/en/latest/>
@@ -20,9 +21,9 @@ output: html_document
 * RStudio Support:  <https://support.rstudio.com/hc/en-us/articles/200532077?version=0.99.489&mode=desktop>
 
 ## Workshop Activities and Background
-### Part 1: Explorer Demo
-* Walkthrough of Neotoma Explorer.  Exercise available at SERC Carleton: <http://serc.carleton.edu/neotoma/activities.html>
-* save JSON and drag back to Explorer
+### Part 1: Neotoma Explorer 
+1. Walkthrough of Neotoma Explorer.  This and other Neotoma-related exercises are available at (SERC Carleton)[http://serc.carleton.edu/neotoma/activities.html].
+2. save JSON and drag back to Explorer
 
 ### Part 2:  APIs & JSON
 #### Intro to APIs
@@ -36,12 +37,27 @@ Let's begin with an example of an API that we use all the time:  Google. Take a 
 
 > https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=when%20did%20the%20quaternary%20begin
 
-This is the API that interfaces between your web browser and Google's databases.
-
-You can see I searched for the string “when did the quatnerary begin”, it is prefaced by “q=”. Google's servers know that when they are reading the URL everything followed by the hash sign (#) is part of a set of variables.
+This is the API that interfaces between your web browser and Google's databases.  You can see I searched for the string “when did the quatnerary begin”, it is prefaced by “q=”. Google's servers know that when they are reading the URL everything followed by the hash sign (#) is part of a set of variables.
 
 #### Neotoma APIs
 [Neotoma](http://www.neotomadb.org) has the same kind of API, although it is specialized to serve up the paleoecological records stored in the database. The APIs are documented and described on the Neotoma developer [website](http://api.neotomadb.org/)
+
+The Neotoma API is just a way for applications on your computer (such as R) to interact with the Neotoma database. It allows you to search for sites, publications, authors and data sets using the Neotoma URL. For example the sites command:
+
+> http://api.neotomadb.org/v1/data/sites?altmin=0&altmax=100
+
+will return a massive wall of text. At first pass, it's a bit daunting.  But, if you look at it more closely you will see that it starts with the word success, and then contains site data for all sites in the Neotoma database that have elevations between 0 and 100ft. 
+
+This is a good moment to introduce JSON.  JSON stands for JavaScript Object Notation.  JSON is a lightweight data-interchange format.  It's text-based, so easy for humans to read.  It's highly structured, making it easy for machines to parse and create.
+
+Several extensions exist for browsers to make JSON data easier to read.  I use **JSONView**
+
+Various APIs have been developed to return datasets, publications and other database tables from within Neotoma. In addition, a set of APIs exist that each directly map onto a table in the Neotoma Database.  All APIs are documented on the (Neotoma Developer Center)[http://api.neotomadb.org/doc/home]
+
+##### Walkthrough of APIs
+1.	Site, Dataset, etc. (walk through each with examples)
+2.	Base Tables 
+
 
 
 
